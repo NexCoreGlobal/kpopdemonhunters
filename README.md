@@ -44,3 +44,24 @@ Honmoon Status 위젯은 honmoon.world의 외부 임베드로 보입니다 — �
 3. 저장소 **Settings → Pages** → Source를 `Deploy from a branch`, Branch를
    `main` / `/(root)`로 설정 후 저장합니다.
 4. 1~2분 후 `https://사용자명.github.io/저장소명/` 주소로 사이트가 뜹니다.
+
+## 커스텀 도메인 연결 (카페24 → kpopdemonhuntersnetflix.com)
+
+현재 저장소: `nexcoreglobal/kpopdemonhuntersnetflix`
+(`https://nexcoreglobal.github.io/kpopdemonhuntersnetflix`)
+
+이 폴더에 이미 `CNAME` 파일(`kpopdemonhuntersnetflix.com`)을 넣어뒀습니다.
+파일을 그대로 두고 저장소에 함께 커밋/업로드하면 됩니다.
+
+1. **GitHub 저장소 → Settings → Pages → Custom domain**에
+   `kpopdemonhuntersnetflix.com` 입력 후 Save.
+   (이미 CNAME 파일이 있어서 자동으로 채워질 수도 있습니다.)
+2. **카페24 → 나의서비스 관리 → 도메인관리 → DNS 관리**로 이동.
+3. **CNAME 레코드** 추가 — 호스트명 `www`, 값 `nexcoreglobal.github.io`
+4. **A 레코드** 추가 — 호스트명 `@`, 값 `185.199.108.153`
+   (카페24는 같은 호스트명에 A레코드 1개만 허용 — 1개만 넣어도 정상 작동합니다.)
+5. 최대 24시간 DNS 전파 대기 후, GitHub Pages 설정 화면에서
+   **Enforce HTTPS** 체크박스 활성화.
+6. 브라우저에서 `https://kpopdemonhuntersnetflix.com` 접속 확인.
+   `www.kpopdemonhuntersnetflix.com`으로 접속해도 자동으로
+   `kpopdemonhuntersnetflix.com`으로 리디렉션됩니다 (GitHub Pages 기본 동작).
